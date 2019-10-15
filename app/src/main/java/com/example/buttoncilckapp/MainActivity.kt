@@ -19,11 +19,14 @@ class MainActivity : AppCompatActivity() {
          val button = findViewById<Button>(R.id.button)
         textView = findViewById<TextView>(R.id.textView2)
         textView?.movementMethod = ScrollingMovementMethod()
+        userInput.setText("")
 
         button?.setOnClickListener {object : View.OnClickListener {
                 override fun onClick(p0: View?) {
                     textView?.append( userInput?.text)
                     textView?.append("\n")
+                    userInput.text.clear()
+                    userInput.setText("")
                 }
             }
         }
